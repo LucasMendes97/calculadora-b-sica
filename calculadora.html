@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<style>
+		body{
+        background-color:rgb(0, 0, 0);
+    }
+	div{
+        position:absolute;
+        top: 20px;
+		border: 1px solid aqua;
+        background-color:darkgray;
+        width: 173px;
+		text-align: center;
+    }
+</style>
+</head>
+
+<body>
+	<div>
+		<input type="text" id="display" value="" class="form-control"></p>
+		<input type="button" id="1" value="1" class="btn btn-primary btn-sm" onclick="teclas(1)">
+		<input type="button" id="2" value="2" class="btn btn-primary btn-sm" onclick="teclas(2)">
+		<input type="button" id="3" value="3" class="btn btn-primary btn-sm" onclick="teclas(3)">
+		<input type="button" value="+" class="btn btn-warning btn-sm" onclick="soma()"></p>
+		<input type="button" id="4" value="4" class="btn btn-primary btn-sm" onclick="teclas(4)">
+		<input type="button" id="5" value="5" class="btn btn-primary btn-sm" onclick="teclas(5)">
+		<input type="button" id="6" value="6" class="btn btn-primary btn-sm" onclick="teclas(6)">
+		<input type="button" value="-" class="btn btn-warning btn-sm" onclick="subtrai()"></p>
+		<input type="button" id="7" value="7" class="btn btn-primary btn-sm" onclick="teclas(7)">
+		<input type="button" id="8" value="8" class="btn btn-primary btn-sm" onclick="teclas(8)">
+		<input type="button" id="9" value="9" class="btn btn-primary btn-sm" onclick="teclas(9)">
+		<input type="button" value="*" class="btn btn-warning btn-sm" onclick="multiplica()"></p>
+		<input type="button" value="/" class="btn btn-warning btn-sm" onclick="divide()">
+		<input type="button" value="=" class="btn btn-info btn-sm" onclick="igual()">
+		<input type="button" value="C" class="btn btn-info btn-sm" onclick="clearDisplay()">
+	</div>
+
+	<script>
+		var valor1, status;
+
+		function clearDisplay() {
+			document.getElementById("display").value = "";
+		}
+
+		function subtrai() {
+			valor1 = document.getElementById("display").value;
+			status = "subtrai";
+			document.getElementById("display").value = "";
+		}
+
+		function soma() {
+			valor1 = document.getElementById("display").value;
+			status = "soma";
+			document.getElementById("display").value = "";
+		}
+
+		function multiplica() {
+			valor1 = document.getElementById("display").value;
+			status = "multiplica";
+			document.getElementById("display").value = "";
+		}
+
+		function divide() {
+			valor1 = document.getElementById("display").value;
+			status = "divide";
+			document.getElementById("display").value = "";
+		}
+
+		function igual() {
+			if (status == "soma") {
+				var valor2 = parseInt(document.getElementById("display").value);
+				var resultado = valor2 + parseInt(valor1);
+				document.getElementById("display").value = resultado;
+			} else if (status == "subtrai") {
+				var valor2 = parseInt(document.getElementById("display").value);
+				var resultado = parseInt(valor1) - valor2;
+				document.getElementById("display").value = resultado;
+			} else if (status == "multiplica") {
+				var valor2 = parseInt(document.getElementById("display").value);
+				var resultado = parseInt(valor1) * valor2;
+				document.getElementById("display").value = resultado;
+			} else if (status == "divide") {
+				var valor2 = parseInt(document.getElementById("display").value);
+				var resultado = parseInt(valor1) / valor2;
+				document.getElementById("display").value = resultado;
+			}
+		}
+
+		function teclas(valor) {
+			switch (valor) {
+				case 1:
+					var valor = document.getElementById("display").value;
+					valor += 1;
+					document.getElementById("display").value = valor;
+					break;
+
+				case 2:
+					var valor = document.getElementById("display").value;
+					valor += 2;
+					document.getElementById("display").value = valor;
+					break;
+
+				case 3:
+					var valor = document.getElementById("display").value;
+					valor += 3;
+					document.getElementById("display").value = valor;
+					break;
+
+				case 4:
+					var valor = document.getElementById("display").value;
+					valor += 4;
+					document.getElementById("display").value = valor;
+					break;
+
+				case 5:
+					var valor = document.getElementById("display").value;
+					valor += 5;
+					document.getElementById("display").value = valor;
+					break;
+
+				case 6:
+					var valor = document.getElementById("display").value;
+					valor += 6;
+					document.getElementById("display").value = valor;
+					break;
+
+				case 7:
+					var valor = document.getElementById("display").value;
+					valor += 7;
+					document.getElementById("display").value = valor;
+					break;
+
+				case 8:
+					var valor = document.getElementById("display").value;
+					valor += 8;
+					document.getElementById("display").value = valor;
+					break;
+
+				case 9:
+					var valor = document.getElementById("display").value;
+					valor += 9;
+					document.getElementById("display").value = valor;
+					break;
+
+				default:
+					break;
+			}
+		}
+	</script>
+</body>
+
+</html>
