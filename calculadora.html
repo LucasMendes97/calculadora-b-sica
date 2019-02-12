@@ -50,52 +50,63 @@
 	</div>
 
 	<script>
-		var valor1, status;
 		function clearDisplay() {
 			document.getElementById("display").value = "";
 		}
 
 		function subtrai() {
-			valor1 = document.getElementById("display").value;
-			status = "subtrai";
-			document.getElementById("display").value = "";
+			document.getElementById("display").value += "-";
 		}
 
 		function soma() {
-			valor1 = document.getElementById("display").value;
-			status = "soma";
-			document.getElementById("display").value = "";
+			document.getElementById("display").value += "+";
 		}
 
 		function multiplica() {
-			valor1 = document.getElementById("display").value;
-			status = "multiplica";
-			document.getElementById("display").value = "";
+			document.getElementById("display").value += "*";
 		}
 
 		function divide() {
-			valor1 = document.getElementById("display").value;
-			status = "divide";
-			document.getElementById("display").value = "";
+			document.getElementById("display").value += "/";
 		}
 
 		function igual() {
-			if (status == "soma") {
-				var valor2 = parseInt(document.getElementById("display").value);
-				var resultado = valor2 + parseInt(valor1);
-				document.getElementById("display").value = resultado;
-			} else if (status == "subtrai") {
-				var valor2 = parseInt(document.getElementById("display").value);
-				var resultado = parseInt(valor1) - valor2;
-				document.getElementById("display").value = resultado;
-			} else if (status == "multiplica") {
-				var valor2 = parseInt(document.getElementById("display").value);
-				var resultado = parseInt(valor1) * valor2;
-				document.getElementById("display").value = resultado;
-			} else if (status == "divide") {
-				var valor2 = parseInt(document.getElementById("display").value);
-				var resultado = parseInt(valor1) / valor2;
-				document.getElementById("display").value = resultado;
+			var teste = document.getElementById("display").value;
+			var v1, v2, status, valor, passar, sinal;
+			passar = true;
+
+			for (let index = 0; index < teste.length; index++) {
+				if (teste[index] == "+" || teste[index] == "-" || teste[index] == "*" || teste[index] == "/") {
+					sinal = teste[index];
+				}
+			}
+			for (let index = 0; index < teste.length; index++) {
+				if (teste[index] != sinal && passar) {
+					if (index == 0) {
+						v1 = teste[index];
+					} else {
+						v1 += teste[index];
+					}
+				} else if (teste[index] == sinal) {
+					status = teste[index];
+					valor = index;
+					passar = false;
+				} else {
+					if (index == valor + 1) {
+						v2 = teste[index];
+					} else {
+						v2 += teste[index];
+					}
+				}
+			}
+			if (sinal == "+") {
+				document.getElementById("display").value = parseInt(v1) + parseInt(v2);
+			} else if (sinal == "-") {
+				document.getElementById("display").value = parseInt(v1) - parseInt(v2);
+			} else if (sinal == "*") {
+				document.getElementById("display").value = parseInt(v1) * parseInt(v2);
+			} else if (sinal == "/") {
+				document.getElementById("display").value = parseInt(v1) / parseInt(v2);
 			}
 		}
 
