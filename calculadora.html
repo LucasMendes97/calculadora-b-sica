@@ -2,180 +2,185 @@
 <html>
 
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-	<style>
-		body
-	{
-        background-color:rgb(0, 0, 0);
-    }
-	#display{
-		margin: 10px;
-		width: 160px;
-	}
-	div
-	{
-        position:absolute;
-		border: 1px solid aqua;
-        background-color:darkslategrey;
-		padding-bottom: 10px;
-    }
-	.btn{
-		margin-left: 10px;	
-	}
-</style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            background-color: rgb(0, 0, 0);
+            margin: 10px;
+        }
+
+        #display {
+            margin: 10px;
+            width: 160px;
+        }
+
+        div {
+            position: absolute;
+            border-radius: 10px;
+            background-color: darkslategrey;
+            padding-bottom: 10px;
+        }
+
+        .btn {
+            margin-left: 10px;
+            width: 30px;
+            display:inline-block;
+        }
+
+    </style>
 </head>
 
 <body>
-	<div>
-		<input type="text" id="display" value="" class="form-control"></p>
-		<input type="button" id="1" value="1" class="btn btn-primary btn-sm" onclick="teclas(1)">
-		<input type="button" id="2" value="2" class="btn btn-primary btn-sm" onclick="teclas(2)">
-		<input type="button" id="3" value="3" class="btn btn-primary btn-sm" onclick="teclas(3)">
-		<input type="button" value="+" class="btn btn-warning btn-sm" onclick="soma()"></p>
-		<input type="button" id="4" value="4" class="btn btn-primary btn-sm" onclick="teclas(4)">
-		<input type="button" id="5" value="5" class="btn btn-primary btn-sm" onclick="teclas(5)">
-		<input type="button" id="6" value="6" class="btn btn-primary btn-sm" onclick="teclas(6)">
-		<input type="button" value="-" class="btn btn-warning btn-sm" onclick="subtrai()"></p>
-		<input type="button" id="7" value="7" class="btn btn-primary btn-sm" onclick="teclas(7)">
-		<input type="button" id="8" value="8" class="btn btn-primary btn-sm" onclick="teclas(8)">
-		<input type="button" id="9" value="9" class="btn btn-primary btn-sm" onclick="teclas(9)">
-		<input type="button" value="*" class="btn btn-warning btn-sm" onclick="multiplica()"></p>
-		<input type="button" value="0" class="btn btn-primary btn-sm" onclick="teclas(0)">
-		<input type="button" value="/" class="btn btn-warning btn-sm" onclick="divide()">
-		<input type="button" value="=" class="btn btn-info btn-sm" onclick="igual()">
-		<input type="button" value="C" class="btn btn-info btn-sm" onclick="clearDisplay()">
-	</div>
+    <div>
+        <input type="text" id="display" value="" class="form-control"></p>
+        <input type="button" id="1" value="1" class="btn btn-primary btn-sm" onclick="teclas(1)">
+        <input type="button" id="2" value="2" class="btn btn-primary btn-sm" onclick="teclas(2)">
+        <input type="button" id="3" value="3" class="btn btn-primary btn-sm" onclick="teclas(3)">
+        <input type="button" value="+" class="btn btn-warning btn-sm" onclick="soma()"></p>
+        <input type="button" id="4" value="4" class="btn btn-primary btn-sm" onclick="teclas(4)">
+        <input type="button" id="5" value="5" class="btn btn-primary btn-sm" onclick="teclas(5)">
+        <input type="button" id="6" value="6" class="btn btn-primary btn-sm" onclick="teclas(6)">
+        <input type="button" value="-" class="btn btn-warning btn-sm" onclick="subtrai()"></p>
+        <input type="button" id="7" value="7" class="btn btn-primary btn-sm" onclick="teclas(7)">
+        <input type="button" id="8" value="8" class="btn btn-primary btn-sm" onclick="teclas(8)">
+        <input type="button" id="9" value="9" class="btn btn-primary btn-sm" onclick="teclas(9)">
+        <input type="button" value="*" class="btn btn-warning btn-sm" onclick="multiplica()"></p>
+        <input type="button" value="0" class="btn btn-primary btn-sm" onclick="teclas(0)">
+        <input type="button" value="/" class="btn btn-warning btn-sm" onclick="divide()">
+        <input type="button" value="=" class="btn btn-info btn-sm" onclick="igual()">
+        <input type="button" value="C" class="btn btn-info btn-sm" onclick="clearDisplay()">
+    </div>
 
-	<script>
-		function clearDisplay() {
-			document.getElementById("display").value = "";
-		}
+    <script>
+        function clearDisplay() {
+            document.getElementById("display").value = "";
+        }
 
-		function subtrai() {
-			document.getElementById("display").value += "-";
-		}
+        function subtrai() {
+            document.getElementById("display").value += "-";
+        }
 
-		function soma() {
-			document.getElementById("display").value += "+";
-		}
+        function soma() {
+            document.getElementById("display").value += "+";
+        }
 
-		function multiplica() {
-			document.getElementById("display").value += "*";
-		}
+        function multiplica() {
+            document.getElementById("display").value += "*";
+        }
 
-		function divide() {
-			document.getElementById("display").value += "/";
-		}
+        function divide() {
+            document.getElementById("display").value += "/";
+        }
 
-		function igual() {
-			var teste = document.getElementById("display").value;
-			var v1, v2, status, valor, passar, sinal;
-			passar = true;
+        function igual() {
+            var teste = document.getElementById("display").value;
+            var v1, v2, status, valor, passar, sinal;
+            passar = true;
 
-			for (let index = 0; index < teste.length; index++) {
-				if (teste[index] == "+" || teste[index] == "-" || teste[index] == "*" || teste[index] == "/") {
-					sinal = teste[index];
-				}
-			}
-			for (let index = 0; index < teste.length; index++) {
-				if (teste[index] != sinal && passar) {
-					if (index == 0) {
-						v1 = teste[index];
-					} else {
-						v1 += teste[index];
-					}
-				} else if (teste[index] == sinal) {
-					status = teste[index];
-					valor = index;
-					passar = false;
-				} else {
-					if (index == valor + 1) {
-						v2 = teste[index];
-					} else {
-						v2 += teste[index];
-					}
-				}
-			}
-			if (sinal == "+") {
-				document.getElementById("display").value = parseInt(v1) + parseInt(v2);
-			} else if (sinal == "-") {
-				document.getElementById("display").value = parseInt(v1) - parseInt(v2);
-			} else if (sinal == "*") {
-				document.getElementById("display").value = parseInt(v1) * parseInt(v2);
-			} else if (sinal == "/") {
-				document.getElementById("display").value = parseInt(v1) / parseInt(v2);
-			}
-		}
+            for (let index = 0; index < teste.length; index++) {
+                if (teste[index] == "+" || teste[index] == "-" || teste[index] == "*" || teste[index] == "/") {
+                    sinal = teste[index];
+                }
+            }
+            for (let index = 0; index < teste.length; index++) {
+                if (teste[index] != sinal && passar) {
+                    if (index == 0) {
+                        v1 = teste[index];
+                    } else {
+                        v1 += teste[index];
+                    }
+                } else if (teste[index] == sinal) {
+                    status = teste[index];
+                    valor = index;
+                    passar = false;
+                } else {
+                    if (index == valor + 1) {
+                        v2 = teste[index];
+                    } else {
+                        v2 += teste[index];
+                    }
+                }
+            }
+            if (sinal == "+") {
+                document.getElementById("display").value = parseInt(v1) + parseInt(v2);
+            } else if (sinal == "-") {
+                document.getElementById("display").value = parseInt(v1) - parseInt(v2);
+            } else if (sinal == "*") {
+                document.getElementById("display").value = parseInt(v1) * parseInt(v2);
+            } else if (sinal == "/") {
+                document.getElementById("display").value = parseInt(v1) / parseInt(v2);
+            }
+        }
 
-		function teclas(valor) {
-			switch (valor) {
-				case 0:
-					var valor = document.getElementById("display").value;
-					valor += 0;
-					document.getElementById("display").value = valor;
-					break;
-				case 1:
-					var valor = document.getElementById("display").value;
-					valor += 1;
-					document.getElementById("display").value = valor;
-					break;
+        function teclas(valor) {
+            switch (valor) {
+                case 0:
+                    var valor = document.getElementById("display").value;
+                    valor += 0;
+                    document.getElementById("display").value = valor;
+                    break;
+                case 1:
+                    var valor = document.getElementById("display").value;
+                    valor += 1;
+                    document.getElementById("display").value = valor;
+                    break;
 
-				case 2:
-					var valor = document.getElementById("display").value;
-					valor += 2;
-					document.getElementById("display").value = valor;
-					break;
+                case 2:
+                    var valor = document.getElementById("display").value;
+                    valor += 2;
+                    document.getElementById("display").value = valor;
+                    break;
 
-				case 3:
-					var valor = document.getElementById("display").value;
-					valor += 3;
-					document.getElementById("display").value = valor;
-					break;
+                case 3:
+                    var valor = document.getElementById("display").value;
+                    valor += 3;
+                    document.getElementById("display").value = valor;
+                    break;
 
-				case 4:
-					var valor = document.getElementById("display").value;
-					valor += 4;
-					document.getElementById("display").value = valor;
-					break;
+                case 4:
+                    var valor = document.getElementById("display").value;
+                    valor += 4;
+                    document.getElementById("display").value = valor;
+                    break;
 
-				case 5:
-					var valor = document.getElementById("display").value;
-					valor += 5;
-					document.getElementById("display").value = valor;
-					break;
+                case 5:
+                    var valor = document.getElementById("display").value;
+                    valor += 5;
+                    document.getElementById("display").value = valor;
+                    break;
 
-				case 6:
-					var valor = document.getElementById("display").value;
-					valor += 6;
-					document.getElementById("display").value = valor;
-					break;
+                case 6:
+                    var valor = document.getElementById("display").value;
+                    valor += 6;
+                    document.getElementById("display").value = valor;
+                    break;
 
-				case 7:
-					var valor = document.getElementById("display").value;
-					valor += 7;
-					document.getElementById("display").value = valor;
-					break;
+                case 7:
+                    var valor = document.getElementById("display").value;
+                    valor += 7;
+                    document.getElementById("display").value = valor;
+                    break;
 
-				case 8:
-					var valor = document.getElementById("display").value;
-					valor += 8;
-					document.getElementById("display").value = valor;
-					break;
+                case 8:
+                    var valor = document.getElementById("display").value;
+                    valor += 8;
+                    document.getElementById("display").value = valor;
+                    break;
 
-				case 9:
-					var valor = document.getElementById("display").value;
-					valor += 9;
-					document.getElementById("display").value = valor;
-					break;
+                case 9:
+                    var valor = document.getElementById("display").value;
+                    valor += 9;
+                    document.getElementById("display").value = valor;
+                    break;
 
-				default:
-					break;
-			}
-		}
-	</script>
+                default:
+                    break;
+            }
+        }
+    </script>
 </body>
 
 </html>
